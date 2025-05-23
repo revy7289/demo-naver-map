@@ -1,7 +1,7 @@
 export function appendNaverScript(): Promise<void> {
   if (typeof window === "undefined") return Promise.resolve(); // block SSR
 
-  if (document.getElementById("naver-map-script")) return Promise.resolve(); // block duplicate
+  // if (document.getElementById("naver-map-script")) return Promise.resolve(); // block duplicate
 
   return new Promise((res, rej) => {
     const script = document.createElement("script");
