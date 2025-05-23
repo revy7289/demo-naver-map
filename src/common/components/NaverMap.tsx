@@ -1,16 +1,11 @@
 import { useEffect, useRef } from "react";
+import { appendNaverScript } from "../utils/appendNaverScript";
 
 export function NaverMap() {
   const mapRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${
-      import.meta.env.VITE_NAV_CLI
-    }&submodules=geocoder`;
-
-    document.head.appendChild(script);
-    script.onload = () => {
+    appendNaverScript().then(() => {
       if (!window.naver || !mapRef.current) return;
 
       let map = new naver.maps.Map(mapRef.current, {
@@ -19,7 +14,7 @@ export function NaverMap() {
       });
 
       console.log(map);
-    };
+    });
   }, []);
 
   return (
