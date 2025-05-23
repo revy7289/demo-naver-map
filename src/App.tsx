@@ -1,9 +1,10 @@
 import "./App.css";
+import { NaverMap } from "./common/components/NaverMap";
 
 function App() {
   return (
     <>
-      <div>init</div>
+      <NaverMap />
     </>
   );
 }
