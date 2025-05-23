@@ -1,4 +1,4 @@
-# React + Vite // + Naver Map api 연동 실습
+# Naver Map api 연동 실습 (React + Vite)
 
 NaverMap comp 분리
 
